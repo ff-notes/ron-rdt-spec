@@ -14,8 +14,17 @@ For the purpose of the RON format testing, these files must be parsed correctly.
 
 ### Implementations
 
+* **C++**
+    * ?
+* **Go**
+    * ?
 * **Haskell**
-    * [swarm/ron](https://github.com/ff-notes/swarm/tree/master/ron)
+    *   [ron](https://github.com/ff-notes/swarm/tree/master/ron),
+        modules `RON.Text`, `RON.Binary` and others
+* **Java**
+    * ?
+* **JavaScript**
+    * ?
 
 ## Replicated Data Types — RDT
 
@@ -31,3 +40,17 @@ For the purpose of the RON format testing, these files must be parsed correctly.
 ### Test Data
 
 github.com/ff-notes/ron-test
+
+### Implementations
+
+* **C++**
+    * ?
+* **Go**
+    * ?
+* **Haskell**
+    *   [ron](https://github.com/ff-notes/swarm/tree/master/ron),
+        modules `RON.Data`, `RON.Data.*` and others
+* **Java**
+    * ?
+* **JavaScript**
+    * ?
