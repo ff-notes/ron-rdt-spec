@@ -7,11 +7,13 @@ See [gritzko/ron](https://github.com/gritzko/ron)
 ## Specification
 
 * [General terms and algorithms](spec/RDT.md)
-* Concrete types
+* Base types
     * [LWW-per-field](spec/lww.md)
     * [OR-Set](spec/set.md)
     * [RGA](spec/rga.md)
     * [Version vector](spec/vv.md)
+* Composite type construction
+    * [Product type](spec/product.md) (structure, object)
 
 ## Test Data
 

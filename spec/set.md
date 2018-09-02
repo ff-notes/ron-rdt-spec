@@ -39,7 +39,9 @@ Hexadecimal:
 
 ## 3. Value representation
 
-1.  Reduced op format:
+1.  Chunk version is calculated as the maximum *event* or *location* of
+    contained ops.
+2.  Reduced op format:
     1.  Alive version (version that has not been removed)
         1.  **event** is the version
         2.  **location** is 0
@@ -48,7 +50,7 @@ Hexadecimal:
         1.  **event** is the original version
         2.  **location** is the event of the last removal op
         3.  **payload** is the value, for the purpose of undo
-2.  The order of fields doesn't matter.
+3.  The order of fields doesn't matter.
     For reproducibility, ops should be sorted by *event*.
 
 ### 3.1. Examples
