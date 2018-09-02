@@ -1,5 +1,7 @@
 # RON RDT: Version Vector
 
+> https://en.wikipedia.org/wiki/Version_vector
+
 A version vector is a set of timestamps, one timestamp for each replica.
 In RON, this set is formed of UUIDs.
 

@@ -6,13 +6,15 @@ but with Cassandra-inspired extension, namely the field.
 LWW-per-field is the same as LWW register but identified by the pair
 (**object**, **location**) in terms of RON.
 
-Plain LWW may be expressed as a field (op location) with any specific value
-(e. g. 0) of an LWW-per-field object.
+Plain LWW register may be expressed as a field of an LWW-per-field object with
+any specific op *location*.
+Let is be 0.
 
-From the other hand, an LWW-per-field object is a product of LWW registers.
+From the other hand, an LWW-per-field object is a product (vector) of LWW
+registers.
 
-So, with this type we can encode both a simple LWW register and a product of
-LWW registers.
+So, with this type we can encode both a simple LWW register and a product
+(vector) of LWW registers.
 
 Also, single LWW register isn't a monoid, but LWW-per-field object is.
 
