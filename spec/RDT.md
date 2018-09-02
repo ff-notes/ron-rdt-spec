@@ -64,6 +64,7 @@ A reduced value must be represented as a reduced chunk of such structure:
         preceding this value.
         A framework may provide a means to calculate maximum event and set chunk
         version automatically.
+        If a concrete RDT doesn't specify *version* it is calculated this way.
 
     2.  **version** must be *greater* than *version* of all values causally
         preceding this value.
@@ -99,6 +100,7 @@ A reduced patch must be represented as a reduced chunk of such structure:
         preceding this patch.
         A framework may provide a means to calculate maximum event and set chunk
         version automatically.
+        If a concrete RDT doesn't specify *version* it is calculated this way.
 
     2.  **ref** must not be 0.
 
@@ -106,6 +108,7 @@ A reduced patch must be represented as a reduced chunk of such structure:
         preceding this value.
         A framework may provide a means to calculate minimum event and set chunk
         ref automatically.
+        If a concrete RDT doesn't specify *ref* it is calculated this way.
 
 2.  followed by zero or more reduced ops
 
@@ -142,6 +145,5 @@ provided:
     Should reduce several patches in one and ops into patches if possible.
 
 [CRDT]: https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type
-[monoid]: https://en.wikipedia.org/wiki/Monoid
 [RON]: https://github.com/gritzko/ron
 [semilattice]: https://en.wikipedia.org/wiki/Semilattice
