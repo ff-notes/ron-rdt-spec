@@ -62,16 +62,16 @@ A reduced value must be represented as a reduced chunk of such structure:
 
         **version** should be equal to the maximum *event* of all ops causally
         preceding this value.
-        A framework may provide a means to calculate maximum event and set chunk
-        version automatically.
-        If a concrete RDT doesn't specify *version* it is calculated this way.
+
+        If a concrete RDT doesn't specify *version* it is calculated as the
+        maximum *event* of contained ops.
 
     2.  **version** must be *greater* than *version* of all values causally
         preceding this value.
 
     3.  **ref** must be 0.
 
-2.  followed by zero or more reduced ops
+2.  followed by zero or more ops
 
     ```
     *type #object @event :location payload ,
@@ -98,19 +98,19 @@ A reduced patch must be represented as a reduced chunk of such structure:
 
         **version** should be equal to the maximum *event* of all ops causally
         preceding this patch.
-        A framework may provide a means to calculate maximum event and set chunk
-        version automatically.
-        If a concrete RDT doesn't specify *version* it is calculated this way.
+
+        If a concrete RDT doesn't specify *version* it is calculated as the
+        maximum *event* of contained ops.
 
     2.  **ref** must not be 0.
 
         **ref** should be equal to the minimum *event* of all ops causally
         preceding this value.
-        A framework may provide a means to calculate minimum event and set chunk
-        ref automatically.
-        If a concrete RDT doesn't specify *ref* it is calculated this way.
 
-2.  followed by zero or more reduced ops
+        If a concrete RDT doesn't specify *ref* it is calculated as the
+        minimum *event* of contained ops.
+
+2.  followed by zero or more ops
 
     ```
     *type #object @event :location payload ,
