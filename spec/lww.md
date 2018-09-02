@@ -31,8 +31,8 @@ Hexadecimal:
 
 ## 2. Single op representation
 
-1.  **@event** encodes timestamp of write.
-2.  **:location** encodes the object field.
+1.  **event** encodes timestamp of write.
+2.  **location** encodes the object field.
 
 ### 2.1. Examples
 
