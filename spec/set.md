@@ -89,8 +89,8 @@ Hexadecimal:
     the same with compression
 
         *set #32+charlie @72+echo :0         !
-                         @35+alfa :0 'bravo' ,
-                         @72+echo :0 'bravo' ,
+                         @35+alfa    'bravo' ,
+                         @72+echo    'bravo' ,
 
 5.  Replica `delta` got value from the replica `alfa`, but no from the replica
     `echo`. Then `delta` removes the string by its version known to it.
