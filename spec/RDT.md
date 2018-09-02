@@ -68,7 +68,7 @@ A reduced value must be represented as a reduced chunk of such structure:
     2.  **version** must be *greater* than *version* of all values causally
         preceding this value.
 
-    3.  **ref** must 0.
+    3.  **ref** must be 0.
 
 2.  followed by zero or more reduced ops
 
@@ -81,7 +81,39 @@ A reduced value must be represented as a reduced chunk of such structure:
 
 ## 4. Patch representation
 
-TODO
+An RDT may provide the patch representation.
+
+A reduced patch must be represented as a reduced chunk of such structure:
+
+1.  Chunk header
+
+    ```
+    *type #object @version :ref !
+    ```
+
+    1.  **version** must be not less than *event* of any ops causally
+        preceding this patch.
+
+        **version** should be equal to the maximum *event* of all ops causally
+        preceding this patch.
+        A framework may provide a means to calculate maximum event and set chunk
+        version automatically.
+
+    2.  **ref** must not be 0.
+
+        **ref** should be equal to the minimum *event* of all ops causally
+        preceding this value.
+        A framework may provide a means to calculate minimum event and set chunk
+        ref automatically.
+
+2.  followed by zero or more reduced ops
+
+    ```
+    *type #object @event :location payload ,
+    ```
+
+    1.  **type** and **object** must be equal to the *type* and *object* of the
+        chunk header.
 
 ## 5. Reduction
 
