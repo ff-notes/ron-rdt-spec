@@ -82,6 +82,7 @@ A reduced value must be represented as a reduced chunk of such structure:
 ## 4. Patch representation
 
 An RDT may provide the patch representation.
+A patch may be considered as an op batch, or as a partial value.
 
 A reduced patch must be represented as a reduced chunk of such structure:
 
@@ -117,7 +118,28 @@ A reduced patch must be represented as a reduced chunk of such structure:
 
 ## 5. Reduction
 
-TODO
+An RDT must provide reduce function(s):
+
+1.  CvRDT reduction: `(value, value) -> value`
+
+2.  CmRDT application: `(value, op) -> value`
+
+    May be partial, if an op is not applicable.
+
+If an RDT supports patches, then an additional reduction function is required:
+
+3.  Patch application: `(value, patch) -> value`
+
+    (CvRDT partial value reduction, or CmRDT batch op application)
+
+    May be partial, if a patch is not applicable.
+
+If an RDT supports patches, then an additional reduction function may be
+provided:
+
+4.  Patch reduction: `(List<patch>, List<op>) -> (List<patch>, List<op>)`
+
+    Should reduce several patches in one and ops into patches if possible.
 
 [CRDT]: https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type
 [monoid]: https://en.wikipedia.org/wiki/Monoid
