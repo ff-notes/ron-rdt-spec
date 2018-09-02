@@ -24,9 +24,7 @@ An RDT must provide the single op representation.
 
 A single (unreduced) op is represented as a RON raw op chunks
 
-```
-*type #object @event :location payload ;
-```
+    *type #object @event :location payload ;
 
 where
 
@@ -53,9 +51,7 @@ A reduced value must be represented as a reduced chunk of such structure:
 
 1.  Chunk header
 
-    ```
-    *type #object @version :ref !
-    ```
+        *type #object @version :ref !
 
     1.  **version** must be not less than *event* of any ops causally
         preceding this value.
@@ -73,9 +69,7 @@ A reduced value must be represented as a reduced chunk of such structure:
 
 2.  followed by zero or more ops
 
-    ```
-    *type #object @event :location payload ,
-    ```
+        *type #object @event :location payload ,
 
     1.  **type** and **object** must be equal to the *type* and *object* of the
         chunk header.
@@ -89,9 +83,7 @@ A reduced patch must be represented as a reduced chunk of such structure:
 
 1.  Chunk header
 
-    ```
-    *type #object @version :ref !
-    ```
+        *type #object @version :ref !
 
     1.  **version** must be not less than *event* of any ops causally
         preceding this patch.
@@ -112,9 +104,7 @@ A reduced patch must be represented as a reduced chunk of such structure:
 
 2.  followed by zero or more ops
 
-    ```
-    *type #object @event :location payload ,
-    ```
+        *type #object @event :location payload ,
 
     1.  **type** and **object** must be equal to the *type* and *object* of the
         chunk header.
