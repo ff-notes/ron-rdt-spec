@@ -13,7 +13,13 @@ See [gritzko/ron](https://github.com/gritzko/ron)
     * [RGA](spec/rga.md)
     * [Version vector](spec/vv.md)
 * Composite type construction
-    * [Product type](spec/product.md) (structure, object)
+    *   Use object UUID to embed one object into another.
+    *   For any type looking like an ordered collection,
+        it is recommended to use *RGA*.
+    *   For any type looking like an unordered collection,
+        it is recommended to use *OR-Set*.
+    *   For product types (structures, objects),
+        it is recommended to use *LWW-per-field*.
 
 ## Test Data
 
