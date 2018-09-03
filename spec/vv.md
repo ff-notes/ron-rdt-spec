@@ -18,7 +18,7 @@ Hexadecimal:
 
 ## 2. Single op representation
 
-**event** encodes timestamp. **location** is 0. **payload** is empty.
+**event** encodes timestamp. **ref** is 0. **payload** is empty.
 
 ### 2.1. Examples
 

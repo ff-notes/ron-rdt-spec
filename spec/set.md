@@ -21,10 +21,10 @@ Hexadecimal:
 ## 2. Single op representation
 
 1.  Add:
-    1.  **location** is 0
+    1.  **ref** is 0
     2.  **payload** is the value
 2.  Remove:
-    1.  **location** is the version being deleted
+    1.  **ref** is the version being deleted
     2.  **payload** is empty
 
 ### 2.1. Examples
@@ -39,18 +39,18 @@ Hexadecimal:
 
 ## 3. Value representation
 
-1.  Chunk version is calculated as the maximum *event* or *location* of
+1.  Chunk version is calculated as the maximum *event* or *ref* of
     contained ops.
 2.  Reduced op format:
     1.  Alive version (version that has not been removed)
         1.  **event** is the version
-        2.  **location** is 0
+        2.  **ref** is 0
         3.  **payload** is the value
     2.  Tombstone (removed version)
         1.  **event** is the original version
-        2.  **location** is the event of the last removal op
+        2.  **ref** is the event of the last removal op
         3.  **payload** is the value, for the purpose of undo
-3.  The order of fields doesn't matter.
+3.  The order of items doesn't matter.
     For reproducibility, ops should be sorted by *event*.
 
 ### 3.1. Examples
@@ -115,4 +115,4 @@ The same as the value encoding.
 1.  For each item version in a value or patch there must be exactly one op with
     corresponding *event*.
 2.  Removal has precedence over addition.
-    For the same item version, the op with the maximum *location* is chosen.
+    For the same item version, the op with the maximum *ref* is chosen.

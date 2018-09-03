@@ -4,11 +4,11 @@ It seems very useful to implement not just plain last-write-wins (LWW) register,
 but with Cassandra-inspired extension, namely the field.
 
 LWW-per-field is the same as LWW register but identified by the pair
-(**object**, **location**) in terms of RON.
+(**object**, **ref**) in terms of RON.
 
 Plain LWW register may be expressed as a field of an LWW-per-field object with
-any specific op *location*.
-Let is be 0.
+any specific op *ref*.
+Let it be 0.
 
 From the other hand, an LWW-per-field object is a product (vector) of LWW
 registers.
@@ -32,7 +32,7 @@ Hexadecimal:
 ## 2. Single op representation
 
 1.  **event** encodes timestamp of write.
-2.  **location** encodes the object field.
+2.  **ref** encodes the object field.
 
 ### 2.1. Examples
 
@@ -58,7 +58,7 @@ Hexadecimal:
 
 1.  Reduced chunks ops use the same format as raw ops.
 2.  The order of fields doesn't matter.
-    For reproducibility, ops should be sorted by *location*.
+    For reproducibility, ops should be sorted by *ref*.
 
 ### 3.1. Examples
 
@@ -123,6 +123,6 @@ The same as the value encoding.
 ## 5. Reduction
 
 1.  For each field in a value or patch there must be exactly one op with
-    corresponding *location* if the field was set, and none otherwise.
+    corresponding *ref* if the field was set, and none otherwise.
 2.  The result op for each field is selected by the LWW rule — which *event* is
     greater.
