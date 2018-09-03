@@ -30,7 +30,7 @@ See [ff-notes/ron-test](https://github.com/ff-notes/ron-test)
 * **Go**
     *   [gritzko/ron/rdt](https://github.com/gritzko/ron/tree/master/rdt)
 * **Haskell**
-    *   [ff-notes/swarm/ron](https://github.com/ff-notes/swarm/tree/master/ron),
+    *   [ff-notes/ron/ron](https://github.com/ff-notes/ron/tree/master/ron),
         modules `RON.Data`, `RON.Data.*` and others
 * **JavaScript**
     *   [gritzko/swarm/rdt](https://github.com/gritzko/swarm/tree/master/packages/rdt)
