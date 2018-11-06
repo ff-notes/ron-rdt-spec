@@ -27,6 +27,8 @@ See [ff-notes/ron-test](https://github.com/ff-notes/ron-test)
 
 ## Implementations
 
+* **Elixir**
+    *   [flanfly/ronex](https://github.com/flanfly/ronex)
 * **Go**
     *   [gritzko/ron/rdt](https://github.com/gritzko/ron/tree/master/rdt)
 * **Haskell**
